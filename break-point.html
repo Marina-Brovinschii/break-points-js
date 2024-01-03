@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const BREAK_POINT_1 = 60
+        const BREAK_POINT_2 = 560
+        const BREAK_POINT_3 = 980
+        const BREAK_POINT_4 = 1200
+        const BREAK_POINT_5 = 3000
+
+    //  60              560                        980                   1200             3000
+    //--x-----------------x--------------------------x---------------------x----------------x--------> window size
+    //     extra small                small                  medium                large
+    // + size < 60 - error
+    // + size > 3000 - error
+
+        let windowWidth = innerWidth
+
+        if (windowWidth <= BREAK_POINT_1) {
+            alert("error")
+        } else if (windowWidth >= BREAK_POINT_1 && windowWidth <=BREAK_POINT_2) {
+            alert("extra small: " + innerWidth)
+        } else if (windowWidth >= BREAK_POINT_2 && windowWidth <= BREAK_POINT_3) {
+            alert("small: " + innerWidth)
+        } else if (windowWidth >= BREAK_POINT_3 && windowWidth <= BREAK_POINT_4) {
+            alert("medium: " + innerWidth)
+        } else if (windowWidth >= BREAK_POINT_4 && windowWidth <= BREAK_POINT_5) {
+            alert("large: " + innerWidth)
+        } else if (windowWidth >= BREAK_POINT_5) {
+            alert("error")
+        }
+    </script>
+</body>
+
+</html>
